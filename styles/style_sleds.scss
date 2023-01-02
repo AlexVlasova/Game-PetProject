@@ -1,0 +1,464 @@
+$border: #2F496E;
+$pink: rgba(237, 140, 114, 1);
+$white: rgba(244, 234, 222, 1);
+$blue: rgba(41, 136, 188, 1);
+
+$pink-back: rgba(237, 140, 114, .4);
+$white-back: rgba(244, 234, 222, .8);
+$blue-back: rgba(41, 136, 188, .4);
+
+// Общие настройки
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.game-container {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-back {
+    flex-grow: 2;
+    background-color: $white-back;
+}
+
+.game-header {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $border;
+    color: $white;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+
+        .heading {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: $white;
+        }
+
+        .name {
+            font-size: 18px;
+            color: $white;
+        }
+    }
+
+    .restart {
+        color: $white; 
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.white-back {
+    background-color: $white-back;
+}
+
+.pink-back {
+    background-color: $pink-back;
+}
+
+.blue-back {
+    background-color: $blue-back;
+}
+// Страница логина
+.login {
+    .login-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: $border;
+        margin-bottom: 15px;
+    }
+
+    .name-input {
+        min-width: 250px;
+        font-size: 16px;
+        padding: 10px;
+        border: 2px solid $border;
+        border-radius: 4px;
+        margin-right: 20px;
+    }
+
+    .btn-name-start {
+        min-width: 150px;
+        font-size: 16px;
+        padding: 10px;
+        border: 2px solid $border;
+        border-radius: 4px;
+        background-color: $border;
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            background-color: transparent;
+            color: $border;
+            cursor: auto;
+        }
+    }
+
+    &:invalid {
+        .name-input {
+            border-color: crimson;
+        }
+    }
+}
+
+// Страница выбора цвета
+.color-title {
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+    color: $border;
+    margin-bottom: 40px;
+}
+
+.color-block {
+    width: 200px;
+    height: 200px;
+    border: 2px solid $border;
+    border-radius: 10px;
+
+    transition: all 1s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.color-help {
+    font-size: 18px;
+    color: $border;
+}
+
+.color-selector {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.pink-block {
+    background-color: $pink;
+}
+
+.white-block {
+    background-color: $white;
+}
+
+.blue-block {
+    background-color: $blue;
+}
+
+.active-color {
+    width: 250px;
+    height: 250px;
+}
+
+// Выбор уровня
+.choose-level {
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        color: $border;
+        margin-bottom: 10px;
+    }
+
+    .lvls {
+        display: flex;
+        height: 150px;
+        align-items: center;
+    }
+
+    .choose-block {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        border: 2px solid $border;
+        margin-right: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 48px;
+        font-weight: bold;
+        color: $border;
+
+        transition: all 1s ease;
+
+        &:hover {
+            cursor: pointer;
+            width: 120px;
+            height: 120px;
+        }
+
+        &.closed {
+            background-color: rgba(100,100,100, .3);
+            cursor: default;
+
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+// Описание правил
+.rules {
+    &.container {
+        max-width: 700px;
+    }
+
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: $border;
+        margin-bottom: 30px;
+    }
+
+    .descr {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        color: $border;
+    }
+
+    .start-btn {
+        width: 150px;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid $border;
+        border-radius: 2px;
+        color: $border;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+            color: $white;
+            background-color: $border;
+        }
+    }
+}
+
+// Делаем красивыми сами уровни
+.header-lvl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    .timer {
+        color: $border;
+        font-size: 30px;
+        font-weight: bold;
+        min-width: 200px;
+    }
+
+    .score {
+        color: $border;
+        font-size: 48px;
+        font-weight: bold;
+        min-width: 200px;
+        text-align: end;
+    }
+
+    .correct {
+        color: #008080;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.question-pic {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    border: 2px solid $border;
+
+    background-size: cover;
+}
+
+.answers {
+    display: flex;
+    height: 120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer-pic {
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    border: 2px solid $border;
+
+    background-size: cover;
+    transition: all 0.5s ease;
+
+    &:hover {
+        cursor: pointer;
+        width: 110px;
+        height: 110px;
+    }
+
+    .delta {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 90px;
+
+        transition: all 1s ease;
+
+        font-size: 22px;
+        font-weight: bold;
+        color: transparent;
+    }
+}
+
+// Страница результатов
+.level-result {
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: $border;
+        margin-bottom: 30px;
+    }
+
+    .rezult-score {
+        font-size: 58px;
+        font-weight: bold;
+        color: $border;
+        margin-bottom: 50px;
+    }
+
+    .rez-phrase {
+        font-size: 24px;
+        color: $border;
+        margin-bottom: 30px;
+    }
+
+    .rez-lvl-btn {
+        width: 250px;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid $border;
+        border-radius: 2px;
+        color: $border;
+        font-weight: bold;
+        font-size: 18px;
+        background-color: transparent;
+
+        &:hover {
+            cursor: pointer;
+            color: $white;
+            background-color: $border;
+        }
+    }
+}
+
+// 3 уровень
+.level3 {
+    .drag-container {
+        display: flex;
+        align-items: center;
+        height: 350px;
+    }
+
+    .block {
+        height: 100%;
+        flex-basis: 30%;
+
+        border: 2px solid $border;
+        border-radius: 5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: $border;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .question-pic {
+        position: relative;
+    }
+
+    .delta {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 150px;
+
+        font-size: 22px;
+        font-weight: bold;
+        color: rgba(255, 0, 0, 0.8);
+    }
+
+    .help {
+        position: absolute;
+        width: 250px;
+        top: -30px;
+        left: 40px;
+
+        color: $border;
+    }
+}
+
+// Проигрыш
+.loose-result {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .text {
+
+        margin-top: 30px;
+        margin-bottom: 50px;
+
+        color: $border;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .toLvls {
+        min-width: 200px;
+        font-size: 20px;
+        padding: 15px 30px;
+        border: 2px solid $border;
+        border-radius: 4px;
+        background-color: transparent;
+        color: $border;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $border;
+            color: $white;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

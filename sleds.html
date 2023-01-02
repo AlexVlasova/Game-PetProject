@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Следы</title>
+    <link rel="stylesheet" href="styles/style_sleds.min.css">
+</head>
+<body>
+    <div class="game-container">
+
+        <div class="game-header">
+            <div class="left">
+                <div class="heading">Игра "Следы"</div>
+                <div class="name">Выполнила Бариева Александра</div>
+            </div>
+            <div class="right restart">Заново</div>
+        </div>
+
+        <div class="game-back">
+            <form class="login container">
+                <div class="login-title">Введи свое имя:</div>
+                <input type="text" class="name-input" placeholder="Иван" minlength="1" required>
+                <button class="btn-name-start" disabled>Начать игру</button>
+            </form>
+
+            <div class="color-back hidden  container">
+                <div class="color-title">Выбери цвет фона для игры</div>
+                <div class="color-selector">
+                    <div class="pink-block color-block"></div>
+                    <div class="white-block color-block"></div>
+                    <div class="blue-block color-block"></div>
+                </div>
+                <div class="color-help">Кликни дважды по выбранному цвету, чтобы перейти к уровням</div>
+            </div>
+
+            <div class="choose-level hidden container">
+                <div class="title">Выбери уровень:</div>
+                <div class="lvls">
+                    <div class="choose-1 choose-block">1</div>
+                    <div class="choose-2 choose-block closed">2</div>
+                    <div class="choose-3 choose-block closed">3</div>
+                </div>
+            </div>
+
+            <div class="level1-rules container hidden rules">
+                <div class="title">Уровень 1</div>
+                <p class="descr">Найди правильный след как&nbsp;можно быстрее! <br> Перед&nbsp;тобой будет появляться настоящий след животного, и&nbsp;несколько следов, очень похожих (или&nbsp;совсем не&nbsp;похожих) на&nbsp;оригинал.
+                    Попробуй найти тот&nbsp;самый след максимально быстро. От&nbsp;твоей скорости зависят заработанные баллы. При&nbsp;неправильной
+                    попытке баллы будут списываться, так&nbsp;что будь аккуратнее. Ты&nbsp;готов?
+                </p>
+                <div class="start-btn start-btn1">Поехали!</div>
+            </div>
+            <div class="level2-rules container hidden rules">
+                <div class="title">Уровень 2</div>
+                <p class="descr">Играть становится сложнее! <br> Правильные следы теперь прячутся в&nbsp;густой траве. Будь внимательнее
+                    и&nbsp;выбирай только те&nbsp;следы, которые&nbsp;прямо как&nbsp;на&nbsp;картинке сверху. Время все&nbsp;еще важно, а&nbsp;ошибка приведет
+                    к&nbsp;большим потерям. Ты&nbsp;готов?
+                </p>
+                <div class="start-btn start-btn2">Поехали!</div>
+            </div>
+            <div class="level3-rules container rules hidden">
+                <div class="title">Уровень 3</div>
+                <p class="descr">Кого выберешь как&nbsp;домашнего питомца? <br> Перед&nbsp;тобой сложная задача - окончательно разобраться, какому&nbsp;животному
+                    принадлежит каждый след. Рассортируй животных на&nbsp;диких и&nbsp;домашних. Появляющиеся карточки необходимо перетащить в&nbsp;нужное поле как&nbsp;можно быстрее,
+                    пока не&nbsp;вышло время. <br> <br> Если&nbsp;ты сомневаешься, какому животному принадлежит след, нажми правой кнопкой мыши по&nbsp;картнике следа&nbsp;- увидишь подсказку!
+                </p>
+                <div class="start-btn start-btn3">Поехали!</div>
+            </div>
+
+            <div class="level1 container hidden">
+                <div class="header-lvl">
+                    <div class="timer">01:38</div>
+                    <div class="correct hidden">Верно!</div>
+                    <span class="score">0</span>
+                </div>
+                <div class="question-pic"></div>
+                <div class="answers"></div>
+            </div>
+
+            <div class="level2 container hidden">
+                <div class="header-lvl">
+                    <div class="timer">01:38</div>
+                    <div class="correct hidden">Верно!</div>
+                    <span class="score">0</span>
+                </div>
+                <div class="question-pic"></div>
+                <div class="answers"></div>
+            </div>
+
+            <div class="level3 container hidden">
+                <div class="header-lvl">
+                    <div class="timer">01:38</div>
+                    <div class="correct hidden">Верно!</div>
+                    <span class="score">0</span>
+                </div>
+                <div class="drag-container">
+                    <div class="right-block block">Домашние</div>
+                    <div class="question-pic" draggable="true">
+                        <span class="help hidden">Название</span>
+                        <span class="delta hidden">-10</span>
+                    </div>
+                    <div class="left-block block">Дикие</div>
+                </div>
+            </div>
+
+            <div class="level-result container hidden">
+                <p class="title">Твой результат:</p>
+                <div class="rezult-score">0</div>
+                <div class="rez-phrase">Молодец! Твой первый рекорд!</div>
+                <button class="rez-lvl-btn">Перейти к уровням</button>
+            </div>
+
+            <div class="loose-result container hidden">
+                <div class="text">Время вышло, попробуй еще раз!</div>
+                <button class="toLvls">Перейти к уровням</button>
+            </div>
+        </div>
+    </div>
+    <script src="script_sleds.js" defer></script>
+</body>
+</html>
